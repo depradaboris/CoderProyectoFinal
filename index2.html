@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de tu Página</title>
+    <!-- Enlaces a tus estilos CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Enlaces a los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Importo libreria SweetAlert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Enlaces a tus scripts JS -->
+    <script src="js/acciones.js" type="module"></script>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-light">
+            <div class="container-fluid">
+                <!-- Barra de navegación -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 3</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+          <div class="col p-3 bg-primary text-white">
+            <div class="row">
+                <div class="col p-3 bg-primary text-white">
+                    <div class="input-group input-group-lg">
+                        <form id="miFormulario">
+                            <div class="row">
+                                <input type="text" id="campoTexto" class="form-control" placeholder="Buscar Acción" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                                <button type="button" class="btn btn-success" id="botonBuscar">Buscar</button>
+                            </div>                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="col p-3 bg-dark text-white">
+            <div class="row">
+                <div class="col-12">
+                    <a href="catalogo.html" class="btn btn-success btn-block">INVERTIR</a>
+                </div>
+            </div>
+          </div>
+
+          <div class="col p-3 bg-primary text-white">            
+                <table id="miTabla" class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Capitalización</th>
+                            <!-- Agrega más encabezados según tus necesidades -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se agregarán las filas dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Columna 1 -->
+            <div class="col-sm-4">
+                <h3>Column 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <!-- Columna 2 -->
+            <div class="col-sm-4">
+                <h3>Column 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <!-- Columna 3 -->
+            <div class="col-sm-4">
+                <h3>Column 3</h3>        
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones y Contenido adicional -->
+    <button class="btn btn-secondary" id="showAction">Mostrar acción</button>
+    <button class="btn btn-primary" id="filtrarSector">Filtrar Sector</button>
+
+    <div id="catalogo"></div>
+    
+
+</body>
+</html>
