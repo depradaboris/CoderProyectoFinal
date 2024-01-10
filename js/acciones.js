@@ -10,6 +10,9 @@ const body = tabla.getElementsByTagName("tbody")[0];
 let sectorFiltrado;
 
 
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Espera a que la página se cargue completamente
 
