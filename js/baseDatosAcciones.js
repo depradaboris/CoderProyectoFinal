@@ -138,7 +138,7 @@ export const acciones = [
       "FechaEmision": "2002-04-14",
       "IndiceRelacionado": "NASDAQ 100",
       "EstrategiasInversion": ["Enfoque en contenido original", "Expansión global"],
-      "NoticiasEventos": ["Estreno de nuevas series", "Crecimiento de suscriptores"],
+      "NoticiasEventos": ["Estreno de nuevas series", "Crecimiento de suscriptorees"],
       "HistoricoPrecios": [545.0, 552.8, 549.2, 555.7, 558.4]
     },
     {
