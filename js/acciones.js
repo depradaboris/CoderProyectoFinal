@@ -7,6 +7,19 @@ const tabla = document.getElementById('miTabla');
 
 const body = tabla.getElementsByTagName("tbody")[0];
 
+const links_navs = document.querySelectorAll('.nav-link');
+let url;
+console.log(links_navs);
+links_navs.forEach(link => {
+    link.addEventListener('click', setUrl);
+});
+
+function setUrl(event){
+    event.preventDefault();
+    url = event.target.href;
+    console.log(url);
+}
+
 let sectorFiltrado;
 
 
