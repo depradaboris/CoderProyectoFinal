@@ -8,6 +8,7 @@ const tabla = document.getElementById('miTabla');
 const body = tabla.getElementsByTagName("tbody")[0];
 
 const links_navs = document.querySelectorAll('.nav-link');
+
 let url;
 console.log(links_navs);
 links_navs.forEach(link => {
@@ -17,8 +18,25 @@ links_navs.forEach(link => {
 function setUrl(event){
     event.preventDefault();
     url = event.target.href;
-    console.log(url);
+   /*  console.log(url);
+    getPage(url); */
 }
+
+
+/* function getPage(url){
+    fetch(url)
+    .then((res)=>{
+        return res.text();
+    })
+    .then((pag)=>{
+        document.querySelector('main');
+    })
+} */
+
+
+
+
+
 
 let sectorFiltrado;
 
@@ -26,8 +44,13 @@ let sectorFiltrado;
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', function () {
+    
+    
+    
     // Espera a que la página se cargue completamente
+
+
 
     // Obtén el botón y el campo de texto por sus ID
     let botonBuscar = document.getElementById('botonBuscar');
