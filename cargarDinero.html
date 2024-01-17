@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Enlaces a los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-6">
+            <form>
+                <div class="mb-3 mt-3">
+                    <div class="row">
+                        <label for="cantidad" class="form-label">Cantidad:</label>
+                        <input type="number" class="form-control" id="cantidad" placeholder="Ingrese cantidad" name="cantidad">
+                    </div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <div class="row">
+                        <label for="num_tarjeta" class="form-label">Número de Tarjeta:</label>
+                        <input type="number" class="form-control" id="num_tarjeta" placeholder="Ingrese número de tarjeta" name="num_tarjeta" maxlength="16">
+                    </div>
+                </div>
+                
+                <div class="mb-3 mt-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="fecha_vencimiento" class="form-label">Fecha de vencimiento:</label>
+                            <input type="date" class="form-control" id="fecha_vencimiento" placeholder="Vencimiento" name="fecha_vencimiento">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cod_seguridad" class="form-label">Código de seguridad:</label>
+                            <input type="password" class="form-control" id="cod_seguridad" placeholder="Ingresar Código" name="cod_seguridad" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 mt-3">
+                    <div class="row">
+                        <label for="dni" class="form-label">DNI del titular de la tarjeta:</label>
+                        <input type="number" class="form-control" id="dni" placeholder="Ingrese DNI" name="dni" maxlength="8">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Cargar</button>
+            </form>
+        </div>
+    </div>
+      
+</body>
+</html>

@@ -9,6 +9,10 @@ const body = tabla.getElementsByTagName("tbody")[0];
 
 const links_navs = document.querySelectorAll('.nav-link');
 
+const plata = document.getElementById('plataParaGastar');
+console.log(plata.innerHTML);
+
+
 let url;
 console.log(links_navs);
 links_navs.forEach(link => {
@@ -152,3 +156,9 @@ const showCatalog = () => {
 
     document.getElementById('catalogo').innerHTML = msj;
 };
+
+
+function cargarSaldo(){
+    const plata = document.getElementById('plataParaGastar');
+    console.log(plata);
+}
