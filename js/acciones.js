@@ -49,13 +49,7 @@ let sectorFiltrado;
 
 
 window.addEventListener('DOMContentLoaded', function () {
-    
-    
-    
-    // Espera a que la página se cargue completamente
-
-
-
+    actualizarSaldo();
     // Obtén el botón y el campo de texto por sus ID
     let botonBuscar = document.getElementById('botonBuscar');
     let campoTexto = document.getElementById('campoTexto');
@@ -158,7 +152,17 @@ const showCatalog = () => {
 };
 
 
-function cargarSaldo(){
-    const plata = document.getElementById('plataParaGastar');
-    console.log(plata);
+function actualizarSaldo() {
+    // Obtener el valor del saldo almacenado en el localStorage
+    let saldoAlmacenado = localStorage.getItem('saldo') || 0;
+    console.log(saldoAlmacenado);
+    // Obtener el elemento span con el id 'plataParaGastar'
+    let elementoPlataParaGastar = document.getElementById('plataParaGastar');
+    
+    let valor = saldoAlmacenado !== null ? saldoAlmacenado : 0;
+    // Verificar si el saldo almacenado es válido y el elemento existe
+    console.log(valor);
+    
+    elementoPlataParaGastar.innerHTML = valor;
+
 }

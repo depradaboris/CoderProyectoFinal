@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="js/catalogo.js" type="module"></script>
-    <script src="js/funciones.js"></script>
+    
+    <script src="js/catalogo.js" defer></script>
+    <script src="js/funciones.js" defer></script>
 </head>
 
 <body>
@@ -45,5 +46,38 @@
     </div>
 
     <div id="catalogoLoco" class="row"></div>
+
+
+
+  <button id="btnAbrirModal">Abrir Modal</button>
+
+  <div id="miModal" class="modal">
+    <div class="modal-contenido">
+      <span id = "cerrar" class="cerrar" onclick="cerrarModal()">X</span>
+        <div class="row">
+          <!-- Formulario dentro del modal -->
+            <form id="formularioCant">
+              <label for="cantAccion">Cantidad:</label>
+              <input type="number" id="cantAccion" name="cantAccion" required>
+              <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+  </div>
+
+  <div id="miModalVender" class="modal">
+    <div class="modal-contenido">
+      <span id = "cerrarVender" class="cerrar" onclick="cerrarModal()">X</span>
+        <div class="row">
+          <!-- Formulario dentro del modal -->
+            <form id="formularioCantVender">
+              <label for="cantAccionVender">Cantidad:</label>
+              <input type="number" id="cantAccionVender" name="cantAccionVender" required>
+              <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+  </div>
+
 </body>
 </html>
