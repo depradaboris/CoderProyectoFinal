@@ -168,7 +168,6 @@ function abrirModalVender() {
 
 
 let cruz = document.getElementById("cerrar");
-//console.log(cruz);
 
 cruz.addEventListener("click", cerrarModal);
 

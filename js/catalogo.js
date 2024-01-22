@@ -8,7 +8,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
        dibujarCatalogoLoco(datos); 
     })
     .catch((err)=>{
-        console.log(err)
+        Swal.fire({
+            title: 'Error a cargar los datos',
+            text: `No se pudo cargar los datos `,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
     })
 });
 
