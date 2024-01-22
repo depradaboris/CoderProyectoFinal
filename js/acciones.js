@@ -7,41 +7,6 @@ const tabla = document.getElementById('miTabla');
 
 const body = tabla.getElementsByTagName("tbody")[0];
 
-const links_navs = document.querySelectorAll('.nav-link');
-
-const plata = document.getElementById('plataParaGastar');
-console.log(plata.innerHTML);
-
-
-let url;
-console.log(links_navs);
-links_navs.forEach(link => {
-    link.addEventListener('click', setUrl);
-});
-
-function setUrl(event){
-    event.preventDefault();
-    url = event.target.href;
-   /*  console.log(url);
-    getPage(url); */
-}
-
-
-/* function getPage(url){
-    fetch(url)
-    .then((res)=>{
-        return res.text();
-    })
-    .then((pag)=>{
-        document.querySelector('main');
-    })
-} */
-
-
-
-
-
-
 let sectorFiltrado;
 
 
@@ -155,13 +120,11 @@ const showCatalog = () => {
 function actualizarSaldo() {
     // Obtener el valor del saldo almacenado en el localStorage
     let saldoAlmacenado = localStorage.getItem('saldo') || 0;
-    console.log(saldoAlmacenado);
     // Obtener el elemento span con el id 'plataParaGastar'
     let elementoPlataParaGastar = document.getElementById('plataParaGastar');
     
     let valor = saldoAlmacenado !== null ? saldoAlmacenado : 0;
     // Verificar si el saldo almacenado es válido y el elemento existe
-    console.log(valor);
     
     elementoPlataParaGastar.innerHTML = valor;
 

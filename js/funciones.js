@@ -7,9 +7,6 @@ let modal = document.getElementById("miModal");
 
 
 function abrirModal() {
-  modal.style.display = "block";
-}
-function abrirModal() {
     modal.style.display = "block";
 
     return new Promise((resolve) => {
@@ -20,6 +17,7 @@ function abrirModal() {
         });
     });
 }
+
 
 function cerrarModal() {
     modal.style.display = "none";
@@ -83,26 +81,94 @@ async function compraAccion(id) {
             cerrarModal();
         }
     } else {
-        // Si no se encuentra el elemento, mostrar un mensaje de error
-        console.error(`No se encontró el elemento con ID: ${id}`);
+        Swal.fire({
+            title: 'Error',
+            text: `No se ha podido realizar la compra ya que no tiene suficientes fondos`,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
     }
 }
 
-
-
-function venderAccion(accionAVender) {
+async function venderAccion(accionVenta) {
     // Obtener el objeto desde localStorage
     let portActual = JSON.parse(localStorage.getItem('portafolio')) || [];
-    console.log(accionAVender);
-    let elementoVender = document.getElementById(accionAVender);
+    let saldoActual = parseInt(localStorage.getItem('saldo'));
     
-    const accionEncontrada = portActual.find(accionBusca => accionBusca.nombre === accionAVender);
-    console.log(accionEncontrada);
+    const elementosConMismoId = document.querySelectorAll(`#${accionVenta}`)[1];
+
+        let abuscar = elementosConMismoId.id;
+        
+        const cantidad = await abrirModal();
+        const accionEncontrada = portActual.find(accionBusca => accionBusca.nombre === abuscar);
+        if (accionEncontrada !== undefined) {
+            cerrarModal();
+            // Si la acción ya existe, actualizar la cantidad
+            if (accionEncontrada.cantidad >= cantidad) {
+                accionEncontrada.cantidad -= cantidad;
+                saldoActual += parseInt(elementosConMismoId.value) * cantidad;
+                if (accionEncontrada.cantidad <= 0) {
+                    // Si la cantidad es 0 o menor, eliminar el elemento del array
+                    portActual = portActual.filter(accion => accion.nombre !== accionEncontrada.nombre);
+                }
+                localStorage.setItem('saldo', saldoActual);
+               
+                // Guardar el array actualizado en localStorage
+                localStorage.setItem('portafolio', JSON.stringify(portActual));
+                
+                Swal.fire({
+                    title: 'Venta realizada',
+                    text: `La venta de la acción fue creada correctamente en nuestro portafolio`,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                
+            }else{
+                Swal.fire({
+                    title: 'La cantidad que desea vender supera el limite de acciones',
+                    text: `La venta de la acción no pudo realizarse `,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }else{
+            Swal.fire({
+                title: 'Error en la venta',
+                text: `La venta de la acción no pudo realizarse `,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
     
+    cerrarModal();
 }
 
+function abrirModalVender() {
+    modal.style.display = "block";
+
+    return new Promise((resolve) => {
+        const formulario = document.getElementById('formularioCantVender');
+        const inputCantidad = document.getElementById('cantAccionVender');
+
+        const enviarHandler = function (event) {
+            event.preventDefault(); // Evitar que el formulario afecte la URL
+            const cantidad = parseInt(inputCantidad.value);
+            resolve(cantidad); // Resuelve la promesa con el valor de cantidad
+        };
+
+        formulario.addEventListener('submit', enviarHandler);
+
+        document.getElementById('botonEnviar').addEventListener('click', function () {
+            formulario.removeEventListener('submit', enviarHandler); // Eliminar el manejador de eventos
+            formulario.submit(); // Enviar el formulario manualmente después de resolver la promesa
+        });
+    });
+}
+
+
+
 let cruz = document.getElementById("cerrar");
-console.log(cruz);
+//console.log(cruz);
 
 cruz.addEventListener("click", cerrarModal);
 

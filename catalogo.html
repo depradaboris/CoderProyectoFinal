@@ -16,22 +16,17 @@
     <header>
 
 
-        <nav class="navbar navbar-expand-lg bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  <a class="nav-link" href="info.html">Features</a>
-                  <a class="nav-link" href="portafolio.html">Pricing</a>
-                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </div>
-              </div>
+      <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="index2.html">Home</a>
+                <a class="nav-link" href="info.html">Quienes somos</a>
+                <a class="nav-link" href="portafolio.html">Portafolio</a>
             </div>
-          </nav>
+          </div>
+        </div>
+      </nav>
 
 
     </header>
@@ -46,10 +41,6 @@
     </div>
 
     <div id="catalogoLoco" class="row"></div>
-
-
-
-  <button id="btnAbrirModal">Abrir Modal</button>
 
   <div id="miModal" class="modal">
     <div class="modal-contenido">
@@ -71,10 +62,10 @@
         <div class="row">
           <!-- Formulario dentro del modal -->
             <form id="formularioCantVender">
-              <label for="cantAccionVender">Cantidad:</label>
-              <input type="number" id="cantAccionVender" name="cantAccionVender" required>
-              <input type="submit" value="Enviar">
-            </form>
+              <!-- Otros campos del formulario -->
+              <input type="number" id="cantAccionVender" />
+              <input type="submit" id="botonEnviar">Enviar</button>
+          </form>
         </div>
     </div>
   </div>

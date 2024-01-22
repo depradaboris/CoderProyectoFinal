@@ -25,7 +25,7 @@ function dibujarCatalogoLoco(datos){
                 <p class="card-title"> Precio :${accion.PrecioMercado}</p>                                    
                 <div class="row">
                     <button id="${accion.Simbolo}" name="compra" class="btn btn-success" value ="${accion.PrecioMercado}" onclick="compraAccion('${accion.Simbolo}')">Comprar</button>                                    
-                    <button id="${accion.Simbolo}" name="vender" class="btn btn-danger" value ="${accion.PrecioMercado}" onclick="venderAccion('${accion.Simbolo}')">Vender</button>
+                    <button id="${accion.Simbolo}" name="${accion.Simbolo}" class="btn btn-danger" value ="${accion.PrecioMercado}" onclick="venderAccion('${accion.Simbolo}')">Vender</button>
                 </div>
             </div>
         </div>

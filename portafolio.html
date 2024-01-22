@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Torta</title>
+  <!-- Incluye Chart.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    
+  <!-- Elemento HTML donde se mostrará el gráfico -->
+  <canvas id="miGrafico"></canvas>
+
+  <script>
+    // Código JavaScript para crear el gráfico
+    const ctx = document.getElementById('miGrafico').getContext('2d');
+    const jsonAcciones = JSON.parse(localStorage.getItem('portafolio'));
+    
+    let arrayNombres = [];
+    let arrayValores = [];
+    for (let i = 0; i < jsonAcciones.length;i++){
+        arrayNombres.push(jsonAcciones[i].nombre);
+        arrayValores.push(jsonAcciones[i].cantidad);
+    }
+    //console.log(arrayNombres);
+    
+    const data = {
+      labels: arrayNombres,
+      datasets: [{
+        data: arrayValores, // Valores para cada segmento
+        //backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'], // Colores de fondo
+      }]
+    };
+
+    // Configuración del gráfico
+    const options = {
+      responsive: true,
+      maintainAspectRatio: false,
+    };
+
+    // Crea el gráfico de torta
+    const myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: data,
+      options: options
+    });
+  </script>
+</body>
+</html>
